@@ -3,6 +3,7 @@ import '../Styles/ViewTodo.css';
 import { useNavigate } from 'react-router-dom';
 import { GLOBAL_URL, getAllData } from '../ConfigData';
 import { useToast } from '@chakra-ui/react';
+import moment  from 'moment';
 
 export default function ViewTodo() {
 
@@ -35,7 +36,7 @@ export default function ViewTodo() {
                                     😊 {row.description}.
                                 </p>
                                 <p className='content-map-title2'>
-                                    ⏲️ {row.dueDate}.
+                                    ⏲️ {moment(row.dueDate).format('YYYY-MM-DD HH:mm:ss')}.
                                 </p>
                                 <div className='content1-btn-con'>
                                     <button

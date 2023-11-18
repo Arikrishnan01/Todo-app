@@ -27,6 +27,7 @@ export default function AddToDo() {
             }
             setLoading(true);
             const response = await createNewData(formData);
+            
             console.log(response);
             toast({
                 title: "Todo created successful",
