@@ -3,7 +3,7 @@ import axios from "axios";
 export const GLOBAL_URL="https://todo-app-pyt4.onrender.com"
 
 export async function createNewData(data) {
-    return axios.post("https://todo-app-pyt4.onrender.com",data, {
+    return axios.post("https://todo-app-pyt4.onrender.com/toDo/create",data, {
         headers : {
             "access-token": localStorage.getItem("token"),
         },
@@ -12,7 +12,7 @@ export async function createNewData(data) {
 
 // egt all todo
 export async function getAllData() {
-    return axios.get("https://todo-app-pyt4.onrender.com", {
+    return axios.get("https://todo-app-pyt4.onrender.com/toDo/getAllToDo", {
         headers : {
             "access-token": localStorage.getItem("token"),
         },

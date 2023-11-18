@@ -6,7 +6,7 @@ import { useToast } from '@chakra-ui/react';
 
 export default function ViewTodo() {
 
-    const [userData, setUserData ] = useState({});
+    const [userData, setUserData ] = useState([]);
     const navigate = useNavigate();
     const toast = useToast();
 
@@ -23,7 +23,7 @@ export default function ViewTodo() {
         <h2 className='view-title'>My Todos</h2>
         <div className='content-map'>
                 {
-                    userData.length > 0 &&
+                    userData&&
                     userData.map(row => (
                         <div className="container1">
                             <div className="content1">
