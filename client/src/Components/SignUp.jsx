@@ -128,6 +128,16 @@ export default function Login(){
             >
                 Sign Up
             </Button>
+            <div className='login-sub-con'>
+              <span>already have an account?</span> <button 
+                  className='login-sub'
+                  width="100%"
+                  style={{ marginLeft: 10}}
+                  onClick={() => navigate("/login")}
+              >
+                  Login
+              </button>
+            </div>
 
             </VStack>
             </div>

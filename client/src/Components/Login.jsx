@@ -62,7 +62,7 @@ export default function Login(){
         catch (error) {
           toast({
             title: "Error Occured!",
-            description: error.response.message,
+            description: error.response,
             status: "error",
             duration: 5000,
             isClosable: true,
@@ -121,6 +121,16 @@ export default function Login(){
             >
                 Login
             </Button>
+            <div className='login-sub-con'>
+              <span>Don't have an account?</span> <button 
+                  className='login-sub'
+                  width="100%"
+                  style={{ marginLeft: 10}}
+                  onClick={() => navigate("/")}
+              >
+                  SignUp
+              </button>
+            </div>
 
         </VStack>
         </div>
