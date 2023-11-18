@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const GLOBAL_URL="http://localhost:5000"
+export const GLOBAL_URL="https://todo-app-pyt4.onrender.com"
 
 export async function createNewData(data) {
-    return axios.post("http://localhost:5000/toDo/create",data, {
+    return axios.post("https://todo-app-pyt4.onrender.com/",data, {
         headers : {
             "access-token": localStorage.getItem("token"),
         },
@@ -12,7 +12,7 @@ export async function createNewData(data) {
 
 // egt all todo
 export async function getAllData() {
-    return axios.get("http://localhost:5000/toDo/getAllToDo", {
+    return axios.get("https://todo-app-pyt4.onrender.com/", {
         headers : {
             "access-token": localStorage.getItem("token"),
         },
@@ -28,9 +28,9 @@ export const HandleLogOut = () => {
 
 // auth
 export async function userSignUp(data){
-    return axios.post("http://localhost:5000/users/register", data)
+    return axios.post("https://todo-app-pyt4.onrender.com/users/register", data)
 }
 
 export async function userSignIn(data){
-    return axios.post("http://localhost:5000/users/login", data)
+    return axios.post("https://todo-app-pyt4.onrender.com/users/login", data)
 }
