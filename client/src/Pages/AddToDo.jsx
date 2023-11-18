@@ -38,7 +38,7 @@ export default function AddToDo() {
             setTitle("");
             setDiscription("");
             setLoading(false);
-            navigate("/home")
+            window.location.href='/home'
         }
         catch(error){
             toast({
