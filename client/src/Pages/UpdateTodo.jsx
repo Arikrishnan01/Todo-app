@@ -3,6 +3,7 @@ import '../Styles/UpdateTodo.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { GLOBAL_URL } from '../ConfigData';
 import { Button, Input } from '@chakra-ui/react';
+import { useToast } from '@chakra-ui/react';
 
 let initialObject = {
     title: "",
@@ -14,6 +15,7 @@ export default function UpdateTodo() {
     const { id } = useParams();
     const [formState, setForm] = useState(initialObject);
     const [loading, setLoading] = useState(false);
+    const toast = useToast();
   
     const inputHandler = (e) => {
       const name = e.target.name;
@@ -61,6 +63,13 @@ export default function UpdateTodo() {
       .then((data) => {
         setLoading(false);
         console.log(data)
+        toast({
+          title: "Todo updated successful",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+          position: "top-end",
+      });
         // Handle the response data in your front-end code
         navigate("/home");
       })
